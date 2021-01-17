@@ -36,6 +36,7 @@ async function typeDeWriter(speed){
     }
 }
 async function initiateTypeWriter(data){
+    await sleep(2000);
     var txt = [
         ' As you want to know more about me.. ',
         'I have found out a bit about you, too!',
@@ -47,12 +48,13 @@ async function initiateTypeWriter(data){
         ' ISP: '+ data.asn.organization,
         ' Browser: '+ navigator.appCodeName,
         ' Operating system: '+navigator.platform,
-        ' It is really nice to meet you!'
+        ' It is really nice to see you here!'
         ];
     for (const element of txt){
         await typeWriter(element, 100, 0, false);
         await sleep(element.length*170+2500+1000);
     }
+
 }
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
